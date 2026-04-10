@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "research_rep.html",
+    "href": "research_rep.html",
+    "title": "农业废弃物制储氢材料论文复现报告",
+    "section": "",
+    "text": "一、数据准备\nset.seed(123)\ngroup &lt;- factor(c(“UTL0”, “UTL1”, “UTL2”, “UTL3”, “OP0”, “OP1”, “OP2”, “OP3”))\nH2_excess &lt;- c(0, 4.44, 4.83, 5.29, 0, 4.06, 4.78, 5.24)\nBET_SSA &lt;- c(5, 2008, 2378, 2814, 3, 1700, 2218, 2417)\ndat &lt;- data.frame(group, H2_excess, BET_SSA) dat library(ggplot2) library(dplyr)\nmean_data &lt;- dat %&gt;% group_by(group) %&gt;% summarise(mean_H2 = mean(H2_excess))\nggplot(dat, aes(x = group, y = H2_excess, fill = group)) + geom_boxplot(width = 0.6, outlier.shape = NA, alpha = 0.7) + geom_jitter(width = 0.2, size = 2.5, color = “black”) + geom_text(data = mean_data, aes(label = sprintf(“%.2f”, mean_H2)), vjust = -0.8, size = 4, fontface = “bold”) + labs(title = “不同样品高压储氢过量值对比”, x = “样品类型”, y = “储氢量 (wt%)”) + theme_bw() + theme(plot.title = element_text(hjust = 0.5), legend.position = “none”) cor_result &lt;- cor.test(dat\\(BET_SSA, dat\\)H2_excess, method = “kendall”) cor_result\nlibrary(ggplot2) library(dplyr)\nmean_data &lt;- dat %&gt;% group_by(group) %&gt;% summarise(mean_H2 = mean(H2_excess))\nggplot(dat, aes(x = group, y = H2_excess, fill = group)) + geom_boxplot(width = 0.6, outlier.shape = NA, alpha = 0.7) + geom_jitter(width = 0.2, size = 2.5, color = “black”) + geom_text(data = mean_data, aes(label = sprintf(“%.2f”, mean_H2)), vjust = -0.8, size = 4, fontface = “bold”) + labs(title = “不同样品高压储氢过量值对比”, x = “样品类型”, y = “储氢量 (wt%)”) + theme_bw() + theme(plot.title = element_text(hjust = 0.5), legend.position = “none”)\n    cor_result &lt;- cor.test(dat$BET_SSA, dat$H2_excess, method = \"kendall\")\ncor_result"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "首页",
+    "section": "",
+    "text": "这里是农业废弃物能源化与肥料化利用团队主页，记录我们学习、科研与成长。\n\n\n\n农业废弃物资源化利用\n土壤微生物与植物营养\n储氢材料与环境功能材料\n\n\n\n\n点击导航栏「论文复现报告」，查看我们小组对论文 Transforming breakfast bio-waste into hydrogen storage materials 的完整复现过程。"
+  },
+  {
+    "objectID": "index.html#科研方向",
+    "href": "index.html#科研方向",
+    "title": "首页",
+    "section": "",
+    "text": "农业废弃物资源化利用\n土壤微生物与植物营养\n储氢材料与环境功能材料"
+  },
+  {
+    "objectID": "index.html#论文复现报告",
+    "href": "index.html#论文复现报告",
+    "title": "首页",
+    "section": "",
+    "text": "点击导航栏「论文复现报告」，查看我们小组对论文 Transforming breakfast bio-waste into hydrogen storage materials 的完整复现过程。"
+  }
+]
